@@ -1,0 +1,27 @@
+{
+  "info": {
+    "title": "Inventory_management",
+    "version": "1.0",
+    "description": "Inventory_management",
+    "termsOfService": "#",
+    "license": {
+      "name": "MIT",
+      "url": "https://es.wikipedia.org/wiki/Licencia_MIT"
+    },
+    "contact": {
+      "name": "Saurav GHIMIRE",
+      "url": "https://gsaurav.com.np",
+      "email": "gsaurav2000@gmail.com"
+    },
+    "xLogo": {
+      "url": "https://github.com/joolfe/logoBanner.png",
+      "backgroundColor": "#FFFFFF",
+      "altText": "logo"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://inventory-backend-9q36.vercel.app/"
+    }
+  ]
+}

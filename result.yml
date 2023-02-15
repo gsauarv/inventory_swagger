@@ -1,0 +1,302 @@
+openapi: 3.0.0
+info:
+  title: Inventory_management
+  description: Inventory_management
+  version: '1.0'
+  x-logo:
+    url: https://github.com/joolfe/logoBanner.png
+    backgroundColor: '#FFFFFF'
+    altText: logo
+  termsOfService: '#'
+  contact:
+    name: Saurav GHIMIRE
+    url: https://gsaurav.com.np
+    email: gsaurav2000@gmail.com
+  license:
+    name: MIT
+    url: https://es.wikipedia.org/wiki/Licencia_MIT
+servers:
+  - url: https://inventory-backend-9q36.vercel.app/
+tags:
+  - name: Warehouse
+  - name: Item
+  - name: Category
+paths:
+  /000/api/warehouse:
+    post:
+      tags:
+        - Warehouse
+      summary: Create Warehouse
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Sauru's Warehouses
+                address:
+                  type: string
+                  example: Kathmandu,Nepal
+                category:
+                  type: string
+                  example: Cold Storage
+                contact_person:
+                  type: string
+                  example: Saurav Ghimire
+                item_id:
+                  type: string
+                  example: 63e8b458316fc686089a355e
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Warehouse
+      summary: Get warehouses
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /000/api/warehouse/63e8df0fdb0fc8d9e3ff5ef4:
+    post:
+      tags:
+        - Warehouse
+      summary: Update Warehouse
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Sauru's Warehouses
+                address:
+                  type: string
+                  example: Kathmandu,Nepal
+                category:
+                  type: string
+                  example: Cold Storage
+                contact_person:
+                  type: string
+                  example: Saurav Ghimire
+                status:
+                  type: string
+                  example: OPERATIONAL
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Warehouse
+      summary: Delete Warehouse
+      description: warehouse_id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /000/api/warehouse/63e8a28292aea21ddf21c471:
+    patch:
+      tags:
+        - Warehouse
+      summary: Update warehouses status
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  example: UNDER-CONSTRUCTION
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/warehouse/add-item/63e8c8cca6f81341e7526685:
+    post:
+      tags:
+        - Warehouse
+      summary: Add Items
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                item_id:
+                  type: string
+                  example: 63e8c382511cf58536357144
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /000/api/items:
+    post:
+      tags:
+        - Item
+      summary: Create item
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Item 1
+                description:
+                  type: string
+                  example: hello desc
+                imageUrl:
+                  type: string
+                  example: https://google.com
+                price:
+                  type: integer
+                  example: '10'
+                quantity:
+                  type: integer
+                  example: '100'
+                category:
+                  type: string
+                  example: 63e8c240500016749ebe3e83
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/items:
+    get:
+      tags:
+        - Item
+      summary: Get items
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /000/api/items/63e8b4490999ca784834d5e8:
+    delete:
+      tags:
+        - Item
+      summary: Delete Item
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /000/api/items/63e8b458316fc686089a355e:
+    post:
+      tags:
+        - Item
+      summary: Update Item
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Item 1 Updated
+                description:
+                  type: string
+                  example: hello desc
+                quantity:
+                  type: integer
+                  example: '100'
+                price:
+                  type: integer
+                  example: '10'
+                imageUrl:
+                  type: string
+                  example: https://google.com
+                created_at:
+                  type: string
+                  example: Sun Feb 12 2023 15:27:38 GMT+0545 (Nepal Time)
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    patch:
+      tags:
+        - Item
+      summary: Update Status
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  example: available
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /000/api/category:
+    get:
+      tags:
+        - Category
+      summary: Get Category
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Category
+      summary: Create Category
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Auto
+                description:
+                  type: string
+                  example: This is Auto
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /000/api/category/63e8c35f511cf58536357141:
+    post:
+      tags:
+        - Category
+      summary: Update Item
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Updated Category
+                description:
+                  type: string
+                  example: Updated Description
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
